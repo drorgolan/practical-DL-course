@@ -1,0 +1,159 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled0.ipynb",
+      "provenance": [],
+      "collapsed_sections": [],
+      "authorship_tag": "ABX9TyMRo3YEqPCDlF75Ue+MY1qr",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/drorgolan/practical-DL-course/blob/main/%5Clesson1%5CHello.txt\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "3BnkQcHUnhb2"
+      },
+      "outputs": [],
+      "source": [
+        ""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from google.colab import drive\n",
+        "drive.flush_and_unmount()\n",
+        "drive.mount('/GoogleColab')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RaHVUd0HpEwB",
+        "outputId": "85b0a502-1730-437a-c698-7b52f34d8913"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Drive not mounted, so nothing to flush and unmount.\n",
+            "Mounted at /GoogleColab\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from pathlib import Path\n",
+        "#path to my file\n",
+        "output_file = Path(\"/GoogleColab/My Drive/Projects/DL0007/Lesson 1/Hello.txt\")\n",
+        "#make directory that contain my file\n",
+        "output_file.parent.mkdir(exist_ok=True, parents=True)\n",
+        "#write my file \n",
+        "output_file.write_text(\"Hello from my Google Drive! -  (04/07/2022)\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "35oBNIxirjy_",
+        "outputId": "5b1acb7a-fb73-400b-da60-dbef3605deac"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "43"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 32
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\"\"\"\n",
+        "#Otherwise you can manually create the directories by yourself  and run this to create the file\n",
+        "with open('/GoogleColab/My Drive/projects/DL0007/Lesson 1/Hello.txt', 'w') as f:\n",
+        "  f.write('Hello from my Google Drive!')\n",
+        "  \n",
+        "#use linux cat to view the created file  \n",
+        "!cat '/GoogleColab/My Drive/projects/DL0007/Lesson 1/Hello.txt'\n",
+        "\"\"\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ez-o3BkWpEwK",
+        "outputId": "c7d40644-7c65-4afb-aef4-193f3821a7dd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hello from my Google Drive!"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#use python to open the file in a read mode using the r flag\n",
+        "with open('/GoogleColab/My Drive/Projects/DL0007/Lesson 1/Hello.txt', 'r') as f:\n",
+        "    #read the file into variable\n",
+        "    data = f.read()  \n",
+        "#print the variable to the screen\n",
+        "print(data)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "I6K8tt25p9Z1",
+        "outputId": "883144e8-952e-4214-b53c-5e674cf0bc09"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hello from my Google Drive! -  (04/07/2022)\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
